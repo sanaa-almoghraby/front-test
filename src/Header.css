@@ -5,3 +5,7 @@ a{
 a:hover{
   color:darkgrey;
 }
+
+.header{
+gap: 20px;
+}
