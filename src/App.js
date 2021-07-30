@@ -2,9 +2,9 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Login from './Login';
-import Profile from './Profile';
-import MyFav from './MyFav';
-import APIData from './API-Data';
+import Profile from './pages/Profile';
+import MyFav from './pages/MyFav';
+import APIData from './pages/API-Data';
 import { withAuth0 } from '@auth0/auth0-react';
 import {
   BrowserRouter as Router,
