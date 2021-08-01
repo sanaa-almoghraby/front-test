@@ -8,9 +8,9 @@ export class MyFavCard extends Component {
             <div>
                 {this.props.showData && this.props.dataList.map((item, index) => {
           return (
-            <>
+            
              
-              <Card style={{ width: "18rem", margin: "1.5rem", display: "inline-block", }}                >                 
+              <Card key={index} style={{ width: "18rem", margin: "1.5rem", display: "inline-block", }}                >                 
                <Card.Img variant="top" src={item.img} alt="" />                  
                <Card.Body>                    
                  <Card.Title>{item.name}</Card.Title>                    
@@ -20,7 +20,7 @@ export class MyFavCard extends Component {
                  <Button onClick={()=>{this.props.deleteData(index)}}>Delete</Button>                  
                  </Card.Body>                
                  </Card>
-            </>
+            
             
         )
         

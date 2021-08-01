@@ -13,11 +13,9 @@ class MyFav extends React.Component {
       url:process.env.REACT_APP_SERVER,
       dataList:[],
       showData:false,
-
-      id : '',
-      name:'',
-      img:'',
-      level:'',
+      theName:'',
+      theLevel:'',
+      theImg:'',
       index: 0,
       
       showModel:false
@@ -81,8 +79,9 @@ handleShow = (index) => {
       index:index,
     theName:this.state.dataList[index].name,
     theLevel:this.state.dataList[index].level,
-    theImg:this.state.dataList[index].email,
+    theImg:this.state.dataList[index].img,
   })
+  console.log(this.state.dataList[index].name);
 }
 
 handleClose = () => {
@@ -97,7 +96,7 @@ handleClose = () => {
   render() {
     return(
       <>
-      <MyFavCard showData={this.state.showData} dataList={this.state.dataList} handleShow={this.handleShow} deleteData={this.deleteData} />
+      <MyFavCard showData={this.state.showData} dataList={this.state.dataList} handleShow={this.handleShow} deleteData={this.deleteData}  />
       
         {/* {this.state.showData && this.state.dataList.map((item, index) => {
           return (
@@ -119,7 +118,7 @@ handleClose = () => {
         
       })} */}
       <>
-      <UpdateFormModel showModel={this.state.showModel} handleShow={this.handleShow} handleClose={this.handleClose} updateData={this.updateData}  dataList={this.state.dataList} />
+      <UpdateFormModel showModel={this.state.showModel} handleShow={this.handleShow} handleClose={this.handleClose} updateData={this.updateData}  dataList={this.state.dataList} theName={this.state.theName} theLevel={this.state.theLevel} theImg={this.state.theImg} />
       </>
             </>
     )

@@ -19,17 +19,17 @@ export class UpdateFormModel extends Component {
                             <Form onSubmit={this.props.updateData}>
                                 <Form.Group className="mb-3" >
                                     <Form.Label> Name</Form.Label>
-                                    <Form.Control type="text" placeholder="Enter New Name" name="name" defaultValue={this.props.name}/>
+                                    <Form.Control type="text"  name="name" defaultValue={this.props.theName}/>
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" >
                                     <Form.Label>level</Form.Label>
-                                    <Form.Control type="text" placeholder="Enter New Level" name="level" defaultValue={this.props.level}/>
+                                    <Form.Control type="text"  name="level" defaultValue={this.props.theLevel}/>
                                 </Form.Group>
                                 
                                 <Form.Group className="mb-3" >
                                     <Form.Label> Image</Form.Label>
-                                    <Form.Control type="text" placeholder="Enter New Image Link" name="img"  defaultValue={this.props.img}/>
+                                    <Form.Control type="text"  name="img"  defaultValue={this.props.theImg}/>
                                 </Form.Group>
                                 <Modal.Footer>
                                     <Button variant="secondary" onClick={this.props.handleClose}>
