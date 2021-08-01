@@ -2,8 +2,9 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
-import { Card,Button } from 'react-bootstrap';
-import UpdateModal from '../pages/UpdateModal';
+// import { Card,Button } from 'react-bootstrap';
+import UpdateFormModel from './UpdateFormModel';
+import MyFavCard from './MyFavCard';
 
 class MyFav extends React.Component {
   constructor(props){
@@ -96,9 +97,9 @@ handleClose = () => {
   render() {
     return(
       <>
+      <MyFavCard showData={this.state.showData} dataList={this.state.dataList} handleShow={this.handleShow} deleteData={this.deleteData} />
       
-      
-        {this.state.showData && this.state.dataList.map((item, index) => {
+        {/* {this.state.showData && this.state.dataList.map((item, index) => {
           return (
             <>
              
@@ -116,9 +117,9 @@ handleClose = () => {
             
         )
         
-      })}
+      })} */}
       <>
-      <UpdateModal showModel={this.state.showModel} handleShow={this.handleShow} handleClose={this.handleClose} updateData={this.updateData}  dataList={this.state.dataList} />
+      <UpdateFormModel showModel={this.state.showModel} handleShow={this.handleShow} handleClose={this.handleClose} updateData={this.updateData}  dataList={this.state.dataList} />
       </>
             </>
     )
