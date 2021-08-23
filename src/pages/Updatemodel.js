@@ -1,41 +1,42 @@
 import React, { Component } from 'react'
-import { Form, Button,Modal } from 'react-bootstrap';
+import {Modal,Button,Form} from 'react-bootstrap'
 
 
-class Updatemodel extends Component {
+export class Updatemodel extends Component {
     render() {
         return (
             <div>
-                <Modal show={this.props.showmodel} onHide={this.props.handleClose}>
+                <Modal show={this.props.show} onHide={this.props.handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>UP DATE</Modal.Title>
+                        <Modal.Title>UPDATE</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Form onSubmit={this.props.updatedata}>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label> Name</Form.Label>
-                                <Form.Control type="text" defaultValue={this.props.name} name='name' />
-                                
-                            </Form.Group>
+                        <Form onSubmit={this.props.updatefun}>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>name</Form.Label>
+                            <Form.Control type="text" defaultValue={this.props.opjdata.name} name='name' />
 
-                            <Form.Group className="mb-3" controlId="formBasicPassword">
-                                <Form.Label>image</Form.Label>
-                                <Form.Control type="text" defaultValue={this.props.img} name='img'/>
-                            </Form.Group>
-                            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>image</Form.Label>
+                            <Form.Control type="text" defaultValue={this.props.opjdata.img} name='img' />
+
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>level</Form.Label>
-                                <Form.Control type="text" defaultValue={this.props.level} name='level'/>
-                            </Form.Group>
-                            <Button variant="primary" type="submit"onClick={this.props.handleClose}>
-                                update
-                            </Button>
-                        </Form>
-                    </Modal.Body>
+                            <Form.Control type="text" defaultValue={this.props.opjdata.level} name='level' />
+
+                        </Form.Group>
+
+                        <Button variant="primary" type="submit">
+                            Submit
+                        </Button>
+                    </Form></Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={this.props.handleClose}>
                             Close
                         </Button>
-                        
+
                     </Modal.Footer>
                 </Modal>
             </div>
